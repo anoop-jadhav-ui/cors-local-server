@@ -11,7 +11,7 @@ app.use("/forward", cors(), async function (req, res, next) {
     const response = await axios.get(urlToHit);
     res.send(response.data);
   } catch (error) {
-    res.send(error);
+    res.status(500).send(error);
   }
 });
 
